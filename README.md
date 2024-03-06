@@ -25,7 +25,7 @@
     <strong>Lihua Xie</strong>
     
   </p>
-  <p align="center"><strong>Nanyang Technological University</strong>
+  <h5 align="center"><a href = "https://www.ntu.edu.sg/cartin"><strong>Centre for Advanced Robotics Technology Innovation (CARTIN), Nanyang Technological University</strong></a></h5>
   <h3 align="center"><a href="https://arxiv.org/pdf/2309.08914.pdf">Arxiv</a></h3>
   <div align="center"></div>
 </p>
