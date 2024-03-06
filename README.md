@@ -58,7 +58,7 @@ To this end, we propose a hierarchical one-shot localization algorithm called Ou
 </details>
 
 ## Contact
-If you have any questions, please contact:
+If you have any question, please contact:
 
 - Pengyu Yin {[pengyu001@e.ntu.edu.sg]()}
 
