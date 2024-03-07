@@ -1,0 +1,13 @@
+<launch>
+
+<arg name="debug" default="false"/>
+<arg name="launch_prefix" value="gdb --args" if="$(arg debug)"/>
+<arg name="launch_prefix" value="" unless="$(arg debug)"/>
+
+<rosparam command="load" file="$(find outram)/config/global_localization.yaml" />
+
+<node name="global_localization" pkg="outram" type="global_localization" launch-prefix="$(arg launch_prefix)" output="screen"/>
+
+<node name="rviz" pkg="rviz" type="rviz" args="-d $(find outram)/rviz/global_localization_ntu.rviz"/>
+
+</launch>

@@ -1,0 +1,105 @@
+######################### clustering param #########################
+car_param:
+  use_car: true
+  use_DCVC: false
+  DCVC_min_num: 30
+  class_num: 0
+  min_dist: 0.3
+  min_num: 100
+  max_num: 500000
+
+trunk_param:
+  use_trunk: true
+  use_DCVC: false
+  DCVC_min_num: 5
+  class_num: 9
+  min_dist: 0.5
+  min_num: 15
+  max_num: 100000
+
+pole_param:
+  use_pole: true
+  use_DCVC: false
+  DCVC_min_num: 5
+  class_num: 10
+  min_dist: 0.5
+  min_num: 15
+  max_num: 100000
+
+DCVC_param:
+  startR: 0.35    # Surface voxel initial polar diameter resolution
+  deltaR: 0.0004  # Pole diameter increment
+  deltaP: 1.2     # Pitch angle increment
+  deltaA: 1.2     # Azimuth increment
+  minSeg: 300      # After splitting, how many points are at least one category, and categories smaller than this number will be filtered out
+
+######################### registration param #########################
+solving_w_cov: false
+noise_level: 0.5
+distribution_noise_level: 10
+
+######################### control param #########################
+step_stop: true
+begin_index: 0
+eva_frame_num: 2
+# viz
+enable_visualization: true
+# camparisons
+use_semantic: true # false for pure geo ablation
+solving_all2all: false
+dsample: true
+gen_cluster_map: false
+
+######################### data base param #########################
+scan_path: /data_ssd/NTU_MCD/ntu_night_13/bin
+label_path: /data_ssd/NTU_labels/NTU_MCD/retained_label/ntu_night_13
+gt_file_path: /data_ssd/NTU_MCD/ntu_night_13/pose.txt
+# MCD
+calibration_matrix:
+  data: [0.9999346552051229, 0.003477624535771754, -0.010889970036688295, -0.060649229060416594,
+         0.003587143302461965, -0.9999430279821171, 0.010053516443599904, -0.012837544242408117,
+         -0.010854387257665576, -0.01009192338171122, -0.999890161647627, -0.020492606896077407]
+# MulRan
+# calibration_matrix:
+#   data: [-0.99998295, 0.00583984, -0.00000524, 1.70430303,
+#          -0.00583984,-0.99998295, 0.00000175, -0.01105054,
+#          -0.00000523, 0.00000178, 1.0,        -1.80469106]
+
+viz_map_file_path: /data_ssd/NTU_MCD/global_map/GlobalFullMapSpar.pcd
+
+cluster_map_path: /data_ssd/semantic_maps/NTU_MCD/semantic_cluster_map/cluster_map.pcd
+cluster_map_cov_file_path: /data_ssd/semantic_maps/NTU_MCD/semantic_cluster_map/covariances.bin
+
+result_file_path: /home/pam/Documents/results_2023/semantic_gloc/mulran_kaist/03/temp_result.txt
+
+######################### std param ##########################
+# pre process
+ds_size: 0.25
+maximum_corner_num: 100
+
+# key points
+plane_detection_thre: 0.01
+plane_merge_normal_thre: 0.2
+voxel_size: 2.0
+voxel_init_num: 10
+proj_image_resolution: 0.5
+proj_dis_min: 0
+proj_dis_max: 5
+corner_thre: 10
+
+# std descriptor
+descriptor_near_num: 10
+descriptor_min_len: 0.5
+descriptor_max_len: 50
+non_max_suppression_radius: 2
+std_side_resolution: 1
+
+# candidate search
+skip_near_num: 100
+candidate_num: 50
+sub_frame_num: 1
+vertex_diff_threshold: 0.2
+rough_dis_threshold: 0.03
+normal_threshold: 0.2
+dis_threshold: 0.3
+icp_threshold: 0.4
