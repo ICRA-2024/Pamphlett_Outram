@@ -48,6 +48,39 @@
 
 ## Install
 
+### Platform requirement
+* Ubuntu OS (tested on 20.04)
+
+### Dependencies
+
+#### 1. Eigen, CMake and Boost
+```
+sudo apt install cmake libeigen3-dev libboost-all-dev
+```
+
+#### 2. Ceres-solver
+Please follow the official instruction [here](http://ceres-solver.org/installation.html). Please be informed a version higher than [2.1.0](https://github.com/ceres-solver/ceres-solver/releases/tag/2.1.0) is required.
+
+### Build Outram
+We rely on [catkin_tool](https://catkin-tools.readthedocs.io/en/latest/) to build Outram. One can also choose [catkin_make](https://wiki.ros.org/catkin/commands/catkin_make) to build the workspace.
+```
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/src
+git clone git@github.com:Pamphlett/Outram.git
+cd Outram && mkdir build && cd build
+cmake ..
+mv pmc-src/ ../../../build/
+cd ~/catkin_ws
+catkin build outram
+``` 
+
+### Data preparation
+A few inputs are required to make Outram to work:
+* LiDAR scans
+* Corresponding point-wise semantic label
+* Semantic cluster map (centroids and covariance matrices)
+* GT pose file (if evaluation is needed)
+
 ## Abstract
 
 <details>
