@@ -32,11 +32,11 @@
 
 **TL;DR. One-shot LiDAR global localization leveraging substructures of 3D scene graphs.**
 
-<!-- This repository holds the official implementation of the paper: "Outram: One-shot Global Localization via Triangulated Scene Graph and Global Outlier Pruning" where we leverage single LiDAR measurements (which is different from accumulative methods e.g., mcl-based methods) for global localization (or pose initialization). -->
+**Please check out our newly published [MCD data set](https://mcdviral.github.io/). Precisely annotated point-wise semantic labels for free. :)**
 
-![](./static/openning.png)
+![](./static/outram_teaser.png)
 
-*Accurate single-frame LiDAR global localization achieved by substructure searching on a 3D scene graph.*
+*One single LiDAR frame (which is different from accumulative counterparts e.g., mcl-based methods) achieved precise global localization (or pose initialization) by searching on a 3D scene graph.*
 
 ---
 
