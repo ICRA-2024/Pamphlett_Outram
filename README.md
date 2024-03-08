@@ -32,7 +32,9 @@
 
 **TL;DR. One-shot LiDAR global localization leveraging substructures of 3D scene graphs.**
 
-**Please check out our newly published [MCD data set](https://mcdviral.github.io/). Precisely annotated point-wise semantic labels for free. :)**
+---
+
+**:smirk_cat:Please check out our newly published [MCD data set](https://mcdviral.github.io/). Precisely annotated point-wise semantic labels for free.**
 
 ![](./static/outram_teaser.png)
 
@@ -110,12 +112,15 @@ An example of the anticipated data set structure is shown here:
 #### Sample data set
 
 In the catkin workspace, run the following lines to test on the provided data:
+
 ```
 source devel/setup.bash
 roslaunch outram global_localization.launch
 ```
 
-#### Other/self-collected data set
+After running, hit enter to proceed to the next frame.
+
+<!-- #### Other/self-collected data set -->
 
 ## Abstract
 
