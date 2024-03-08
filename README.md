@@ -79,7 +79,43 @@ A few inputs are required to make Outram to work:
 * LiDAR scans
 * Corresponding point-wise semantic label
 * Semantic cluster map (centroids and covariance matrices)
-* GT pose file (if evaluation is needed)
+* GT pose file (optional)
+* Global point cloud map (optional)
+
+We've prepared one sequence (ntu_night_13) of data out of the [MCD](https://mcdviral.github.io/) data set for testing. Use [this link](https://drive.google.com/file/d/1lDZZvgV0ZGQkLYVSw7MfgM2eFwg_ico-/view?usp=drive_link) to download. Unzip the file and put them into the ```test_data``` subfolder. 
+
+An example of the anticipated data set structure is shown here:
+
+```
+📦test_data
+ ┣ 📂bin
+ ┃ ┣ 📜frame000000.bin
+ ┃ ┣ 📜frame000001.bin
+ ┃ ┗ 📜...
+ ┣ 📂label
+ ┃ ┣ 📜frame000000.bin
+ ┃ ┣ 📜frame000001.bin
+ ┃ ┗ 📜...
+ ┣ 📂semantic_cluster_map
+ ┃ ┣ 📜cluster_map.pcd
+ ┃ ┗ 📜covariances.bin
+ ┣ 📜bin_filelist.txt
+ ┣ 📜label_filelist.txt
+ ┣ 📜GlobalFullMapSpar.pcd
+ ┗ 📜pose.txt
+```
+
+### Run Outram
+
+#### Sample data set
+
+In the catkin workspace, run the following lines to test on the provided data:
+```
+source devel/setup.bash
+roslaunch outram global_localization.launch
+```
+
+#### Other/self-collected data set
 
 ## Abstract
 

@@ -54,7 +54,9 @@ int main(int argc, char **argv) {
   ros::init(argc, argv, "global_localizaiton");
   ros::NodeHandle nh;
 
-  // car cluster params
+  std::string outram_path = ros::package::getPath("outram");
+  std::cout << outram_path << std::endl;
+  // ******************** cluster params ****************************
   int car_class_num;
   double car_min_cluster_dist;
   int car_min_point_num, car_max_point_num;
@@ -126,23 +128,27 @@ int main(int argc, char **argv) {
 
   std::string gt_file_path;
   nh.param<std::string>("/gt_file_path", gt_file_path, "");
-  //   std::string calib_file_path;
-  //   nh.param<std::string>("/calib_file_path", calib_file_path, "");
+  gt_file_path = outram_path + gt_file_path;
 
   std::string scan_path, label_path;
   nh.param<std::string>("/scan_path", scan_path, "");
+  scan_path = outram_path + scan_path;
+
   nh.param<std::string>("/label_path", label_path, "");
+  label_path = outram_path + label_path;
 
   std::string viz_map_file_path;
   nh.param<std::string>("/viz_map_file_path", viz_map_file_path, "");
+  viz_map_file_path = outram_path + viz_map_file_path;
 
-  //   bool gen_cluster_map;
-  //   nh.param<bool>("/gen_cluster_map", gen_cluster_map, true);
   std::string cluster_map_file_path;
   nh.param<std::string>("/cluster_map_path", cluster_map_file_path, "");
+  cluster_map_file_path = outram_path + cluster_map_file_path;
+
   std::string cluster_map_cov_file_path;
   nh.param<std::string>("/cluster_map_cov_file_path", cluster_map_cov_file_path,
                         "");
+  cluster_map_cov_file_path = outram_path + cluster_map_cov_file_path;
 
   bool enable_visualization;
   nh.param<bool>("/enable_visualization", enable_visualization, true);
@@ -182,14 +188,6 @@ int main(int argc, char **argv) {
   } else {
     std::cout << "Mat Tr read complete." << std::endl;
   }
-
-  // log file
-  //   std::string result_file;
-  //   nh.param<std::string>("/result_file_path", result_file, "");
-  //   std::ofstream result_stream(result_file);
-  // clang-format off
-//   std::ofstream time_analysis_stream("/home/pam/Documents/results_2023/semantic_gloc/time_analysis/res.txt");
-  // clang-format on
 
   // publishers
   ros::Publisher SrcPublisher =
@@ -359,7 +357,7 @@ int main(int argc, char **argv) {
     Eigen::Matrix4d gt_lidar = GT_list_camera[index] * calib_mat;
 
     Eigen::Matrix4d vis_mat = Eigen::MatrixXd::Identity(4, 4);
-    vis_mat(2, 3) += 50;
+    vis_mat(2, 3) += 50; // levitate for visualization
 
     vis_mat = gt_lidar * vis_mat;
     pcl::transformPointCloud(*srcRaw, *srcGT, vis_mat);
@@ -499,9 +497,9 @@ int main(int argc, char **argv) {
     eval.compute_adj_rpe(gt_lidar, solution, translation_error, rotation_error);
 
     std::cout << setprecision(4) << "\033[1;32m";
-    std::cout << "Sem Teaser Translation Error = " << translation_error
-              << " meter." << std::endl;
-    std::cout << "           Rotational  Error = " << rotation_error
+    std::cout << "Outram Translation Error = " << translation_error << " meter."
+              << std::endl;
+    std::cout << "       Rotational  Error = " << rotation_error
               << " deg.\033[0m" << std::endl;
 
     bool suc_reg_flag = false;
@@ -695,7 +693,6 @@ void merge_label(const string label_file_path,
     }
   }
 
-  // semantic_pc.reset(new pcl::PointCloud<PointL>);
   for (int i = 0; i < raw_pc->points.size(); i++) {
     PointL tmpL;
     tmpL.x = raw_pc->points[i].x;
@@ -708,13 +705,6 @@ void merge_label(const string label_file_path,
   semantic_pc->width = semantic_pc->points.size();
   semantic_pc->height = 1;
 }
-
-// [ 245, 150, 100 ], #car[180, 30, 80], #truck[150, 60, 30], #bike[30, 30,
-// 255], #person[255, 0, 255], #road[255, 150, 255], #parking[75, 0, 75],
-// #sidewalk[0, 200, 255], #building[0, 175, 0], #nature[150, 240, 255],
-// #pole[19, 69, 139], #tree trunk[255, 255, 50],
-// #other - objects[0, 0, 0],
-// #ignore;
 
 void apply_color_mapping_chz(int label, int &r, int &g, int &b) {
   switch (label) {

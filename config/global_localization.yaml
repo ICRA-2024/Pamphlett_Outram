@@ -41,19 +41,18 @@ distribution_noise_level: 10
 ######################### control param #########################
 step_stop: true
 begin_index: 0
-eva_frame_num: 2
-# viz
+eva_frame_num: 5
+
 enable_visualization: true
-# camparisons
-use_semantic: true # false for pure geo ablation
+use_semantic: true 
 solving_all2all: false
 dsample: true
 gen_cluster_map: false
 
 ######################### data base param #########################
-scan_path: /data_ssd/NTU_MCD/ntu_night_13/bin
-label_path: /data_ssd/NTU_labels/NTU_MCD/retained_label/ntu_night_13
-gt_file_path: /data_ssd/NTU_MCD/ntu_night_13/pose.txt
+scan_path: /test_data/bin
+label_path: /test_data/label
+gt_file_path: /test_data/pose.txt
 # MCD
 calibration_matrix:
   data: [0.9999346552051229, 0.003477624535771754, -0.010889970036688295, -0.060649229060416594,
@@ -65,12 +64,10 @@ calibration_matrix:
 #          -0.00583984,-0.99998295, 0.00000175, -0.01105054,
 #          -0.00000523, 0.00000178, 1.0,        -1.80469106]
 
-viz_map_file_path: /data_ssd/NTU_MCD/global_map/GlobalFullMapSpar.pcd
+viz_map_file_path: /test_data/GlobalFullMapSpar.pcd
 
-cluster_map_path: /data_ssd/semantic_maps/NTU_MCD/semantic_cluster_map/cluster_map.pcd
-cluster_map_cov_file_path: /data_ssd/semantic_maps/NTU_MCD/semantic_cluster_map/covariances.bin
-
-result_file_path: /home/pam/Documents/results_2023/semantic_gloc/mulran_kaist/03/temp_result.txt
+cluster_map_path: /test_data/semantic_cluster_map/cluster_map.pcd
+cluster_map_cov_file_path: /test_data/semantic_cluster_map/covariances.bin
 
 ######################### std param ##########################
 # pre process
