@@ -2,12 +2,12 @@
 
   <h1 align="center">Outram: One-shot Global Localization via Triangulated Scene Graph and Global Outlier Pruning</h1>
 
-  <!-- <p align="center">
-    <a href="https://github.com/PRBonn/PIN_SLAM#run-pin-slam"><img src="https://img.shields.io/badge/python-3670A0?style=flat-square&logo=python&logoColor=ffdd54" /></a>
-    <a href="https://github.com/PRBonn/PIN_SLAM#installation"><img src="https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black" /></a>
+  <p align="center">
+    <a href="https://github.com/Pamphlett/Outram?tab=readme-ov-file#run-outram"><img src="https://img.shields.io/badge/-c++-blue?logo=c%2B%2B&style=flat-square" /></a>
+    <a href="https://github.com/Pamphlett/Outram?tab=readme-ov-file#install"><img src="https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black" /></a>
     <a href="https://arxiv.org/pdf/2309.08914.pdf"><img src="https://img.shields.io/badge/Paper-pdf-<COLOR>.svg?style=flat-square" /></a>
-    <a href="https://lbesson.mit-license.org/"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" /></a>
-  </p> -->
+    <a href="https://lbesson.mit-license.org/"><img src="https://img.shields.io/badge/License-Apache 2.0-red.svg?style=flat-square" /></a>
+  </p>
   
   <p align="center">
     <strong>Pengyu Yin</strong>
@@ -84,7 +84,7 @@ A few inputs are required to make Outram to work:
 * GT pose file (optional)
 * Global point cloud map (optional)
 
-We've prepared one sequence (ntu_night_13) of data out of the [MCD](https://mcdviral.github.io/) data set for testing. Use [this link](https://drive.google.com/file/d/1lDZZvgV0ZGQkLYVSw7MfgM2eFwg_ico-/view?usp=drive_link) to download. Unzip the file and put them into the ```test_data``` subfolder. 
+We've prepared one sequence (ntu_night_13) of data out of the [MCD](https://mcdviral.github.io/) data set for testing. Use [this link](https://drive.google.com/file/d/1lDZZvgV0ZGQkLYVSw7MfgM2eFwg_ico-/view?usp=drive_link) to download. Unzip the file and put them into the ```test_data``` subfolder in the project directory. 
 
 An example of the anticipated data set structure is shown here:
 
@@ -137,6 +137,12 @@ If you have any question, please contact:
 - Pengyu Yin {[pengyu001@e.ntu.edu.sg]()}
 
 ## Acknowledgment
+We would like to show our greatest respect to authors of the following repos for making their works public:
+* [Teaser](https://github.com/MIT-SPARK/TEASER-plusplus) 
+* [Quatro](https://github.com/url-kaist/Quatro)
+* [SPVNAS](https://github.com/mit-han-lab/spvnas)
+* [T-LOAM](https://github.com/zpw6106/tloam)
+* [PIN-SLAM](https://github.com/PRBonn/PIN_SLAM)
 
 ## Citation
 If you find Outram useful, please consider citing:
