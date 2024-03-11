@@ -26,7 +26,7 @@
     
   </p>
   <h5 align="center"><a href = "https://www.ntu.edu.sg/cartin"><strong>Centre for Advanced Robotics Technology Innovation (CARTIN), Nanyang Technological University</strong></a></h5>
-  <h3 align="center"><a href="https://arxiv.org/pdf/2309.08914.pdf">Arxiv</a></h3>
+  <h4 align="center"><a href="https://arxiv.org/pdf/2309.08914.pdf">Arxiv</a></h4>
   <div align="center"></div>
 </p>
 
@@ -44,7 +44,7 @@
 
 ![](./static/ICRA24_1108_VI_i.gif)
 
-*Running example of Outram on [MCD](https://mcdviral.github.io/) and [MulRan](https://sites.google.com/view/mulran-pr/dataset) against sota LCD (loop closure detection)-based method.* 
+*Running example of Outram on [MCD](https://mcdviral.github.io/) and [MulRan](https://sites.google.com/view/mulran-pr/dataset) against sota LCD (loop closure detection)-based method Global localization is conducted for each of the single frames.* 
 
 ---
 
@@ -156,4 +156,4 @@ If you find Outram useful, please consider citing:
 ```
 
 ## Misc
-[Outram](https://en.wikipedia.org/wiki/Outram_Park_MRT_station) stems from one of the MRT (subway) station name in Singapore.
+[Outram](https://en.wikipedia.org/wiki/Outram_Park_MRT_station) stems from one of the MRT (subway) station names in Singapore.
