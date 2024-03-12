@@ -6,7 +6,7 @@
     <a href="https://github.com/Pamphlett/Outram?tab=readme-ov-file#run-outram"><img src="https://img.shields.io/badge/-c++-blue?logo=c%2B%2B&style=flat-square" /></a>
     <a href="https://github.com/Pamphlett/Outram?tab=readme-ov-file#install"><img src="https://img.shields.io/badge/Linux-FCC624?logo=linux&logoColor=black" /></a>
     <a href="https://arxiv.org/pdf/2309.08914.pdf"><img src="https://img.shields.io/badge/Paper-pdf-<COLOR>.svg?style=flat-square" /></a>
-    <a href="https://lbesson.mit-license.org/"><img src="https://img.shields.io/badge/License-Apache 2.0-red.svg?style=flat-square" /></a>
+    <a href="https://www.apache.org/licenses/LICENSE-2.0.txt"><img src="https://img.shields.io/badge/License-Apache 2.0-red.svg?style=flat-square" /></a>
   </p>
   
   <p align="center">
