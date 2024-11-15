@@ -33,14 +33,17 @@ RUN git clone https://github.com/ICRA-2024/Pamphlett_Outram.git
 
 # Build the Outram package
 WORKDIR /catkin_ws/src/Pamphlett_Outram
+SHELL ["/bin/bash", "-c"]
 RUN mkdir -p build && cd build && \
+    source /opt/ros/noetic/setup.bash && \
     cmake .. && \
     mv pmc-src/ /catkin_ws/build/
     
 WORKDIR /catkin_ws
 
 # Build the workspace
-RUN /bin/bash -c "catkin build outram"
+RUN source /opt/ros/noetic/setup.bash && \
+    catkin build outram
 
 # Source the workspace in the container's bash environment
 RUN echo "source /opt/ros/noetic/setup.bash" >> /root/.bashrc && \
